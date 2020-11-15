@@ -6,13 +6,14 @@ import Nav from 'react-bootstrap/Nav'
 
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
+import EmployeeListPage from './pages/EmployeeListPage'
 
 class App extends React.Component {
   constructor(props) {
     super(props);
      
     this.state = {
-      title: 'Trevor Parchem',
+      title: 'Employee Dashboard',
       headerLinks: [
         { title: 'Home', path: '/' },
         { title: 'About', path: '/about'},
@@ -20,12 +21,12 @@ class App extends React.Component {
         { title: 'Resume', path: '/resume'}
       ],
       home: {
-        title: 'Trevor Parchem',
-        subTitle: 'Software Engineer',
-        subText: 'Connect with me below'
+        title: 'Employee Dashboard',
+        subTitle: 'Manager View',
+        subText: 'Use the following tabs to retrieve information about employees and their shifts'
       },
-      about: {
-        title: 'About Me',
+      employeelist: {
+        title: 'List of Employees',
       },
       resume: {
         title: 'My Resume',
@@ -42,13 +43,13 @@ class App extends React.Component {
         <Container className="p-0" fluid={true}>
           
           <Navbar className="border-bottom" bg="transparent" expand="lg">
-            <Navbar.Brand>Trevor Parchem</Navbar.Brand>
+            <Navbar.Brand>Company Portal</Navbar.Brand>
 
             <Navbar.Toggle className="border-0" aria-controls="navbar-toggle" />
             <Navbar.Collapse id="navbar-toggle">
               <Nav className="ml-auto">
                 <Link className="nav-link" to="/">Home</Link>
-                <Link className="nav-link" to="/about">About</Link>
+                <Link className="nav-link" to="/employeelist">Employee List</Link>
                 <Link className="nav-link" to="/resume">Resume</Link>
                 <Link className="nav-link" to="/contact">Contact</Link>
 
@@ -57,6 +58,7 @@ class App extends React.Component {
           </Navbar>
           
           <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} subText={this.state.home.subText} />} />
+          <Route path="/employeelist" exact render={() => <EmployeeListPage />} />
           <Footer />
           
         </Container>
