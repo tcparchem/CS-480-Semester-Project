@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav'
 
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
-import EmployeeListPage from './pages/EmployeeListPage'
+import EmployeeDirectoryPage from './pages/EmployeeDirectoryPage'
 
 class App extends React.Component {
   constructor(props) {
@@ -49,7 +49,7 @@ class App extends React.Component {
             <Navbar.Collapse id="navbar-toggle">
               <Nav className="ml-auto">
                 <Link className="nav-link" to="/">Home</Link>
-                <Link className="nav-link" to="/employeelist">Employee List</Link>
+                <Link className="nav-link" to="/employeedirectory">Employee Directory</Link>
                 <Link className="nav-link" to="/resume">Resume</Link>
                 <Link className="nav-link" to="/contact">Contact</Link>
 
@@ -58,7 +58,7 @@ class App extends React.Component {
           </Navbar>
           
           <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} subText={this.state.home.subText} />} />
-          <Route path="/employeelist" exact render={() => <EmployeeListPage />} />
+          <Route path="/employeedirectory" exact render={() => <EmployeeDirectoryPage />} />
           <Footer />
           
         </Container>

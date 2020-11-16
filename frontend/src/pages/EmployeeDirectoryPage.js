@@ -4,7 +4,7 @@ import axios from 'axios'
 import * as ReactBootStrap from "react-bootstrap";
 
 
-class EmployeeListPage extends React.Component {
+class EmployeeDirectoryPage extends React.Component {
     state = { 
         data: []
     }
@@ -51,4 +51,4 @@ class EmployeeListPage extends React.Component {
     }
 }
 
-export default EmployeeListPage;
+export default EmployeeDirectoryPage;
