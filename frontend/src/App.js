@@ -7,6 +7,10 @@ import Nav from 'react-bootstrap/Nav'
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import EmployeeDirectoryPage from './pages/EmployeeDirectoryPage'
+import EmployeeShiftsPage from './pages/EmployeeShiftPage'
+import EmployeeShiftsThisWeekPage from './pages/EmployeeShiftsThisWeekPage'
+import EmployeeShiftsThisMonthPage from './pages/EmployeeShiftsThisMonthPage'
+
 
 class App extends React.Component {
   constructor(props) {
@@ -50,8 +54,11 @@ class App extends React.Component {
               <Nav className="ml-auto">
                 <Link className="nav-link" to="/">Home</Link>
                 <Link className="nav-link" to="/employeedirectory">Employee Directory</Link>
-                <Link className="nav-link" to="/resume">Resume</Link>
-                <Link className="nav-link" to="/contact">Contact</Link>
+                <Link className="nav-link" to="/employeeshifts">All Shifts</Link>
+                <Link className="nav-link" to="/employeeshiftsthisweek">Shifts This Week</Link>
+                <Link className="nav-link" to="/employeeshiftsthismonth">Shifts This Month</Link>
+                <Link className="nav-link" to="/addshift">Add Shift</Link>
+                <Link className="nav-link" to="/removeshift">Remove Shift</Link>
 
               </Nav>
             </Navbar.Collapse>
@@ -59,6 +66,9 @@ class App extends React.Component {
           
           <Route path="/" exact render={() => <HomePage title={this.state.home.title} subTitle={this.state.home.subTitle} subText={this.state.home.subText} />} />
           <Route path="/employeedirectory" exact render={() => <EmployeeDirectoryPage />} />
+          <Route path="/employeeshifts" exact render={() => <EmployeeShiftsPage />} />
+          <Route path="/employeeshiftsthisweek" exact render={() => <EmployeeShiftsThisWeekPage />} />
+          <Route path="/employeeshiftsthismonth" exact render={() => <EmployeeShiftsThisMonthPage />} />
           <Footer />
           
         </Container>
