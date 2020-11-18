@@ -13,6 +13,7 @@ router.get('/getEmployees', (req, res) => {
             res.json(rows);
         } else {
             console.log(err);
+            res.status(500).send({ error: err });
         }
     });
 });
@@ -25,6 +26,7 @@ router.get('/getShifts', (req, res) => {
             res.json(rows);
         } else {
             console.log(err);
+            res.status(500).send({ error: err });
         }
     });
 });
@@ -37,6 +39,7 @@ router.get('/getShiftsThisWeek', (req, res) => {
             res.json(rows);
         } else {
             console.log(err);
+            res.status(500).send({ error: err });
         }
     });
 });
@@ -49,6 +52,7 @@ router.get('/getShiftsThisMonth', (req, res) => {
             res.json(rows);
         } else {
             console.log(err);
+            res.status(500).send({ error: err });
         }
     });
 });
@@ -62,6 +66,25 @@ router.delete('/deleteShift', (req, res) => {
             res.json(rows);
         } else {
             console.log(err);
+            res.status(500).send({ error: err });
+        }
+    });
+});
+
+router.post('/addShift', (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*")
+    var employeeID = req.query.employeeID 
+    var startTime = req.query.startTime
+    var endTime = req.query.endTime 
+    var position = req.query.position 
+    var location = req.query.location
+
+    connection.query('CALL addShift(' + employeeID + ', "' + startTime + '", "' + endTime + '", "' + position + '", "' + location + '");', (err, rows, fields) => {
+        if (!err) {
+            res.json(rows);
+        } else {
+            console.log(err);
+            res.status(500).send({ error: err });
         }
     });
 });

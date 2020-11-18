@@ -28,10 +28,7 @@ class EmployeeDirectoryPage extends React.Component {
         )
     }
 
-    render() {
-        
-        console.log(this.state.data);
-        
+    render() {        
         return (
             <div>
                 <Table striped bordered hover>
