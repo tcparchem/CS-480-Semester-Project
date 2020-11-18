@@ -24,6 +24,7 @@ class EmployeeShiftsThisMonthPage extends React.Component {
 
         return (
             <tr key={index}>  
+                <td>{shifts.shiftID}</td>
                 <td>{shifts.employeeID}</td>
                 <td>{shifts.firstName}</td>
                 <td>{shifts.lastName}</td>
@@ -41,6 +42,7 @@ class EmployeeShiftsThisMonthPage extends React.Component {
                 <ReactBootStrap.Table striped bordered hover>
                     <thead>
                         <tr>
+                            <th>Shift ID</th>
                             <th>Employee ID</th>
                             <th>First Name</th>
                             <th>Last Name</th>

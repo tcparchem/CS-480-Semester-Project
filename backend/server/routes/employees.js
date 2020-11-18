@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 const connection = require('../db/database.js');
 
 // Basic GET route to call stored procedure to retrieve list of all employees
@@ -51,5 +52,19 @@ router.get('/getShiftsThisMonth', (req, res) => {
         }
     });
 });
+
+router.delete('/deleteShift', (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*")
+    var shiftID = req.query.id
+
+    connection.query('CALL deleteShift(' + shiftID + ');', (err, rows, fields) => {
+        if (!err) {
+            res.json(rows);
+        } else {
+            console.log(err);
+        }
+    });
+});
+
 
 module.exports = router;
