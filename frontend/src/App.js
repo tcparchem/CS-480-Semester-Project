@@ -10,6 +10,7 @@ import EmployeeDirectoryPage from './pages/EmployeeDirectoryPage'
 import EmployeeShiftsPage from './pages/EmployeeShiftPage'
 import EmployeeShiftsThisWeekPage from './pages/EmployeeShiftsThisWeekPage'
 import EmployeeShiftsThisMonthPage from './pages/EmployeeShiftsThisMonthPage'
+import DeleteShiftPage from './pages/DeleteShiftPage';
 
 
 class App extends React.Component {
@@ -69,6 +70,7 @@ class App extends React.Component {
           <Route path="/employeeshifts" exact render={() => <EmployeeShiftsPage />} />
           <Route path="/employeeshiftsthisweek" exact render={() => <EmployeeShiftsThisWeekPage />} />
           <Route path="/employeeshiftsthismonth" exact render={() => <EmployeeShiftsThisMonthPage />} />
+          <Route path="/removeshift" exact render={() => <DeleteShiftPage />} />
           <Footer />
           
         </Container>

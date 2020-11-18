@@ -1,7 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 
-import * as ReactBootStrap from "react-bootstrap";
+import Table from 'react-bootstrap/Table'
 
 
 class EmployeeDirectoryPage extends React.Component {
@@ -34,7 +34,7 @@ class EmployeeDirectoryPage extends React.Component {
         
         return (
             <div>
-                <ReactBootStrap.Table striped bordered hover>
+                <Table striped bordered hover>
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -45,7 +45,7 @@ class EmployeeDirectoryPage extends React.Component {
                     <tbody>
                         {this.state.data.map(this.renderEmployee)}
                     </tbody>
-                </ReactBootStrap.Table>
+                </Table>
             </div>
         );
     }
