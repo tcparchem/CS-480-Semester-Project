@@ -62,11 +62,16 @@ const mysqlConnection = mysql.createConnection({
 	```  
   
 ## Simulation & Results:
-![](https://i.imgur.com/jWpttD6.png)
-![](https://i.imgur.com/0InAig0.png)
-![](https://i.imgur.com/64gIrPJ.png)
-![](https://i.imgur.com/LZQXbsP.png)
-![](https://i.imgur.com/Si5NJSi.png)
+![](https://i.imgur.com/jWpttD6.png)    
+
+![](https://i.imgur.com/0InAig0.png)     
+
+![](https://i.imgur.com/64gIrPJ.png)     
+
+![](https://i.imgur.com/LZQXbsP.png)    
+
+![](https://i.imgur.com/Si5NJSi.png)      
+
 
 ## Deployed & Assembled with:  
 * [React](https://reactjs.org/) - Javascript library for building user interfaces
@@ -78,8 +83,10 @@ const mysqlConnection = mysql.createConnection({
 * [Axios](https://www.npmjs.com/package/axios) - Promise based HTTP client for the browser and node.js used to make API calls
 
 # Design and Modeling Documentation:  
-Database Schema:
-![](https://i.imgur.com/O6IsqHa.png)
+Database Schema:     
+
+![](https://i.imgur.com/O6IsqHa.png)      
+
 
 The database was created from scratch. I was unable to find a proper dataset that captured what I wanted to build in this application. There are two tables, employees and shifts. The diagram above describes the relationships between the attributes of each table. Upon implementing the database, I implored different constraints, such as 'NOT NULL' and AUTO_INCREMENT on the primary key fields. There is a foreign key relationship in the shifts table as employeeID references ID in the employees table. I also added a SQL constraint 'CheckEndlaterThanstart' which constrains when a manager adds a shift, the end date has to be after the start time, otherwise the constraint is violated and the insert will fail. 
 
