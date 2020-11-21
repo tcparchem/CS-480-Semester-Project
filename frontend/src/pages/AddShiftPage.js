@@ -50,11 +50,11 @@ class AddShiftPage extends React.Component {
             if(res.data.affectedRows === 0) this.setState({success: false})
             if(res.data.affectedRows === 1) this.setState({success: true})
         })
-        .catch(function (error) {
+        .catch( (error) => {
             this.setState({success: false})
             alert('Error Adding Shift, check for valid Employee ID!')
             console.log(error)
-        })
+        });
     }
 
     render() {
