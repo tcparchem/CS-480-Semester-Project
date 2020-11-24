@@ -57,6 +57,36 @@ router.get('/getShiftsThisMonth', (req, res) => {
     });
 });
 
+router.get('/retrieveShiftsByName', (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*")
+    var firstName = req.query.firstName
+    var lastName = req.query.lastName
+
+    connection.query('CALL retrieveShiftsByName("' + firstName + '", "' + lastName + '");', (err, rows, fields) => {
+        if (!err) {
+            res.json(rows);
+        } else {
+            console.log(err);
+            res.status(500).send({ error: err });
+        }
+    });
+});
+
+router.get('/retrieveShiftsByTime', (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*")
+    var startTime = req.query.startTime
+    var endTime = req.query.endTime
+
+    connection.query('CALL retrieveShiftsByTime("' + startTime + '", "' + endTime + '");', (err, rows, fields) => {
+        if (!err) {
+            res.json(rows);
+        } else {
+            console.log(err);
+            res.status(500).send({ error: err });
+        }
+    });
+});
+
 router.delete('/deleteShift', (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
     var shiftID = req.query.id

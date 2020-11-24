@@ -12,6 +12,8 @@ import EmployeeShiftsThisWeekPage from './pages/EmployeeShiftsThisWeekPage'
 import EmployeeShiftsThisMonthPage from './pages/EmployeeShiftsThisMonthPage'
 import DeleteShiftPage from './pages/DeleteShiftPage';
 import AddShiftPage from './pages/AddShiftPage'
+import RetrieveShiftsByNamePage from './pages/RetrieveShiftsByNamePage';
+import RetrieveShiftsByTimePage from './pages/RetrieveShiftsByTimePage';
 
 
 class App extends React.Component {
@@ -59,6 +61,8 @@ class App extends React.Component {
                 <Link className="nav-link" to="/employeeshifts">All Shifts</Link>
                 <Link className="nav-link" to="/employeeshiftsthisweek">Shifts This Week</Link>
                 <Link className="nav-link" to="/employeeshiftsthismonth">Shifts This Month</Link>
+                <Link className="nav-link" to="/retrieveShiftsByName">Search By Name</Link>
+                <Link className="nav-link" to="/retrieveShiftsByTime">Search By Time</Link>
                 <Link className="nav-link" to="/addshift">Add Shift</Link>
                 <Link className="nav-link" to="/removeshift">Remove Shift</Link>
 
@@ -71,6 +75,8 @@ class App extends React.Component {
           <Route path="/employeeshifts" exact render={() => <EmployeeShiftsPage />} />
           <Route path="/employeeshiftsthisweek" exact render={() => <EmployeeShiftsThisWeekPage />} />
           <Route path="/employeeshiftsthismonth" exact render={() => <EmployeeShiftsThisMonthPage />} />
+          <Route path="/retrieveShiftsByName" exact render={() => <RetrieveShiftsByNamePage />} />
+          <Route path="/retrieveShiftsByTime" exact render={() => <RetrieveShiftsByTimePage />} />
           <Route path="/addshift" exact render={() => <AddShiftPage />} />
           <Route path="/removeshift" exact render={() => <DeleteShiftPage />} />
           <Footer />
