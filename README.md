@@ -32,9 +32,22 @@ A step by step series of examples that tell you how to get a development environ
 
 2. If you haven't already, download a copy of the database, open the .sql file in MySQL WorkBench and execute the file which will create the schema, tables, and procedures
 
-3. Open VSCode and open top level folder of repository which contains a folder containing the backend and frontend code 
+3. In MySQL Workbench, connect to the database schema and execute the following query on it. MySQL 8.0+ by default does not support the authentication protocol requested by the server. In order to remedy this, follow the following instructions
 
-4. Navigate to the terminal and cd into .\backend\ and .\frontend\ folders respectively and run ``` npm install ``` in each of the directories to install the necessary dependencies
+Execute the following query in MYSQL Workbench:
+
+``` ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password' ```
+
+Where root as your user localhost as your URL and password as your password
+
+Then run this query to refresh privileges:
+
+``` flush privileges; ```. 
+
+
+4. Open VSCode and open top level folder of repository which contains a folder containing the backend and frontend code 
+
+5. Navigate to the terminal and cd into .\backend\ and .\frontend\ folders respectively and run ``` npm install ``` in each of the directories to install the necessary dependencies
     
 
 ## Configuration:  
