@@ -75,15 +75,34 @@ const mysqlConnection = mysql.createConnection({
 	```  
   
 ## Simulation & Results:
-![](https://i.imgur.com/jWpttD6.png)    
+### Home Page:   
+![](https://i.imgur.com/C6RTP2x.png)     
 
-![](https://i.imgur.com/0InAig0.png)     
+### Employee Directory:   
+![](https://i.imgur.com/dpI0hBT.png)     
 
-![](https://i.imgur.com/64gIrPJ.png)     
+### All Shifts Page:   
+![](https://i.imgur.com/xFPHcry.png)     
 
-![](https://i.imgur.com/LZQXbsP.png)    
+### Shifts This Week Page:   
+![](https://i.imgur.com/ZOrk2at.png)     
 
-![](https://i.imgur.com/Si5NJSi.png)      
+### Shifts This Month Page:   
+![](https://i.imgur.com/FAjdmP9.png)     
+
+### Search By Name Page:   
+![](https://i.imgur.com/bJURlXd.png)     
+
+### Search By Time Page:   
+![](https://i.imgur.com/XhX3jpJ.png)     
+
+### Add Shift Page:   
+![](https://i.imgur.com/Oma4lHo.png)  
+
+### Remove Shift Page:   
+![](https://i.imgur.com/D0c3f0j.png)    
+
+      
 
 
 ## Deployed & Assembled with:  
@@ -103,7 +122,7 @@ Database Schema:
 
 The database was created from scratch. I was unable to find a proper dataset that captured what I wanted to build in this application. There are two tables, employees and shifts. The diagram above describes the relationships between the attributes of each table. Upon implementing the database, I implored different constraints, such as 'NOT NULL' and AUTO_INCREMENT on the primary key fields. There is a foreign key relationship in the shifts table as employeeID references ID in the employees table. I also added a SQL constraint 'CheckEndlaterThanstart' which constrains when a manager adds a shift, the end date has to be after the start time, otherwise the constraint is violated and the insert will fail. 
 
-After the tables were created, I made up mock data for a small to medium size company, around 40 employees, and populated the employees and shifts table with entries for the database to have an initial state. After that, I made use of SQL Procedures that would be called on the backend REST API side of things, I created the following procedures, used on the API side of the application: GetEmployees(), GetShifts() GetShiftsThisWeek(), GetShiftsThisMonth(), deleteShift(IN shiftID int), and addShift(IN employeeID int, IN startTime datetime, IN endTime datetime, IN position varchar(25), IN location varchar(25)).
+After the tables were created, I made up mock data for a small to medium size company, around 40 employees, and populated the employees and shifts table with entries for the database to have an initial state. After that, I made use of SQL Procedures that would be called on the backend REST API side of things, I created the following procedures, used on the API side of the application: GetEmployees(), GetShifts() GetShiftsThisWeek(), GetShiftsThisMonth(), deleteShift(IN shiftID int), addShift(IN employeeID int, IN startTime datetime, IN endTime datetime, IN position varchar(25), IN location varchar(25)), retrieveShiftsByName(IN firstName varchar(255), IN lastName varchar(255)), and retrieveShiftsByTime(IN startTime datetime, IN endTime datetime).
 
 After the database schema was created, I worked on the backend API to connect the database up to and setup the routes. Using express, I created corresponding HTTP function routes, (GET, POST, DELETE), and created the API which uses the MySQL NodeJS connector to query the database and return a JSON response. In order to test the API, I created a Postman collection and was able to run my API calls through there before developing the frontend
 
