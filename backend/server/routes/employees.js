@@ -18,6 +18,7 @@ router.get('/getEmployees', (req, res) => {
     });
 });
 
+// API route to call sproc to retrieve all shifts from the shifts table
 router.get('/getShifts', (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
 
@@ -31,6 +32,7 @@ router.get('/getShifts', (req, res) => {
     });
 });
 
+// API route to call sproc to retrieve all shifts from the shifts table during the week time frame, week start on Sunday
 router.get('/getShiftsThisWeek', (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
 
@@ -44,6 +46,7 @@ router.get('/getShiftsThisWeek', (req, res) => {
     });
 });
 
+// API route to call sproc to retrieve all shifts from the shifts table this month
 router.get('/getShiftsThisMonth', (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
 
@@ -57,6 +60,7 @@ router.get('/getShiftsThisMonth', (req, res) => {
     });
 });
 
+// API route to call sproc to retrieve all shifts from the shifts table where the first and last name are used as search parameters
 router.get('/retrieveShiftsByName', (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
     var firstName = req.query.firstName
@@ -72,6 +76,7 @@ router.get('/retrieveShiftsByName', (req, res) => {
     });
 });
 
+// API route to call sproc to retrieve all shifts from the shifts table where the start and end datetime range are used as search parameters
 router.get('/retrieveShiftsByTime', (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
     var startTime = req.query.startTime
@@ -87,6 +92,7 @@ router.get('/retrieveShiftsByTime', (req, res) => {
     });
 });
 
+// API route to call sproc to delete shift from table given shift ID
 router.delete('/deleteShift', (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
     var shiftID = req.query.id
@@ -101,6 +107,7 @@ router.delete('/deleteShift', (req, res) => {
     });
 });
 
+// API route to call sproc to add shift to the shifts table
 router.post('/addShift', (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*")
     var employeeID = req.query.employeeID 
